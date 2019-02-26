@@ -3,6 +3,9 @@ package com.polanski.calculator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Message
+ */
 @SpringBootApplication
 public class CalculatorApplication {
 

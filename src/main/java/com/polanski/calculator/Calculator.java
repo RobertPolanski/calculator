@@ -2,7 +2,9 @@ package com.polanski.calculator;
 
 import org.springframework.stereotype.Service;
 
-
+/**
+ * Message
+ */
 @Service
 public class Calculator {
 
