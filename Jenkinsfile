@@ -31,5 +31,16 @@ pipeline {
                    reportName: "Checkstyle Report" ])
             }
         }
+        stage("Package") {
+            steps {
+                sh "./gradlew build"
+            }
+        }
+
+        stage("Docker build") {
+            steps {
+                sh "docker build -t 192.168.4.6:5000/calculator ."
+            }
+        }
     }
 }
