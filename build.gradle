@@ -37,3 +37,12 @@ jacocoTestCoverageVerification {
 		}
 	}
 }
+task acceptanceTest(type: Test) {
+	include '**/acceptance/**'
+	systemProperties System.getProperties()
+}
+
+test {
+	exclude '**/acceptance/**'
+	exclude '**/smoke/**'
+}
