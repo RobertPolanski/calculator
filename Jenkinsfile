@@ -44,9 +44,21 @@ pipeline {
             }
         }
 
+        stage("Docker push") {
+            steps {
+                sh "docker push 192.168.4.6:5000/calculator"
+            }
+        }
+
         stage("Deploy to staging") {
             steps {
                 sh "docker-compose up -d"
+            }
+        }
+
+        stage("Acceptance test") {
+            steps {
+                sh "./acceptance/test.sh"
             }
         }
     }
