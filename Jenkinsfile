@@ -58,7 +58,7 @@ pipeline {
 
         stage("Acceptance test") {
             steps {
-                sh "chmod +x ./acceptance/test.sh"
+                sh "chmod +x ./acceptance/acceptance_test.sh"
                 sh "./acceptance/acceptance_test.sh"
             }
         }
