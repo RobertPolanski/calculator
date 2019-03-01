@@ -43,5 +43,16 @@ pipeline {
                 sh "docker build -t 192.168.4.6:5000/calculator ."
             }
         }
+
+        stage("Deploy to staging") {
+            steps {
+                sh "docker-compose up -d"
+            }
+        }
+    }
+    post {
+        always {
+            sh "docker-compose down"
+        }
     }
 }
